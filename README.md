@@ -14,10 +14,22 @@ Running the Policies with OPA:
 Prepare the Input Data: Collect the AWS configuration data (S3 bucket policies, security group rules) and structure it in a JSON format.
 
 Run the Policy:
+
 Save the Rego policies to a file, e.g., aws_security.rego.
 Use OPA to evaluate the policy against the input data:
 
 opa eval --input input.json --data aws_security.rego 'data.aws.security.s3.deny'
 
 The Results:
+
 The evaluation will return the buckets or security groups that violate the defined policies.
+
+Example Output:
+If any buckets are found to be publicly accessible, OPA will output something like this:
+{
+    "result": [
+        {
+            "bucket": "my-public-bucket"
+        }
+    ]
+}
