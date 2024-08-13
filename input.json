@@ -1,0 +1,31 @@
+{
+    "s3": {
+        "buckets": [
+            {
+                "name": "my-public-bucket",
+                "policy": {
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": "*",
+                            "Action": "s3:GetObject",
+                            "Resource": "arn:aws:s3:::my-public-bucket/*"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "security_groups": [
+        {
+            "id": "sg-12345678",
+            "ip_permissions": [
+                {
+                    "from_port": 22,
+                    "to_port": 22,
+                    "ip_ranges": ["0.0.0.0/0"]
+                }
+            ]
+        }
+    ]
+}
