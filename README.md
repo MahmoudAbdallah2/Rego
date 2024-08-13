@@ -1,0 +1,2 @@
+# Rego
+Test Rego policies
