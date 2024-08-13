@@ -1,0 +1,20 @@
+package aws.security.security_groups
+
+default allow = false
+
+open_security_groups[group] {
+    group := input.security_groups[_]
+    group.ip_permissions[_].ip_ranges[_] == "0.0.0.0/0"
+    open_ports[group.ip_permissions[_].from_port]
+}
+
+open_ports(port) {
+    port == 22
+} 
+{
+    port == 3389
+}
+
+deny {
+    open_security_groups[_]
+}
