@@ -30,6 +30,5 @@ If any buckets are found to be publicly accessible, OPA will output something li
         {
             "bucket": "my-public-bucket"
         }
-    ]
-    
+    ] 
 }
