@@ -24,11 +24,12 @@ The evaluation will return the buckets or security groups that violate the defin
 
 Example Output:
 If any buckets are found to be publicly accessible, OPA will output something like this:
-{
 
+{
     "result": [
         {
             "bucket": "my-public-bucket"
         }
     ] 
+    
 }
